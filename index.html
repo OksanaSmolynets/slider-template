@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+  
+        <button id="left">Left</button>
+        <div style = 'background-color: red' class="divka"></div>
+        <div style = 'background-color: green' class="divka"></div>
+        <div style = 'background-color: blue' class="divka"></div>
+        <div style = 'background-color: black' class="divka"></div>
+        <div style = 'background-color: darkorange' class="divka"></div>
+        <button id="right">Right</button>
+   
+
+      
+        <style>
+            .divka {
+                width: 200px;
+                height: 200px;
+                display: none;
+            }
+
+        </style>
+    <script>
+        const divArr = document.body.getElementsByClassName('divka');
+        const leftBtn = document.getElementById('left');
+        const rightBtn = document.getElementById('right');
+
+        let j = 2;
+        divArr[j].style.display = 'block';
+
+        leftBtn.onclick = () => {
+            divArr[j].style.display = 'none';
+            j = j + 1;
+            if (j > divArr.length - 1) {
+                j = 0;
+            }
+            divArr[j].style.display = 'block';
+            
+        };
+
+        rightBtn.onclick = () => {
+            divArr[j].style.display = 'none';
+            j = j - 1;
+            if (j < 0) {
+                j = divArr.length-1;
+            }
+            divArr[j].style.display = 'block';
+            
+        };
+
+        
+
+
+    </script>
+</body>
+</html>
